@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style type="text/css">
+        div {
+            margin-right: 30%;
+            margin-left: 30%;
+            margin-top: 5%
+        }
+    </style>
+
+
+</head>
+<main>
+    <div>
+        <form action="/form" method="POST">
+            <label for='first_name'>What's your first name?</label>
+            <input type="text" name="first_name">
+            <label for='surname'>What's your surname?</label>
+            <input type="text" name="surname">
+            <input class='btn' type="submit" name="submit">
+        </form>
+    </div>
+</main>
+</html>

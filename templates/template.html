@@ -21,8 +21,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <h1>Oh... </h1>
-    <h1>Nice of you to drop by... </h1>
-    <h2>I don't get many visitors since {{ ex }} left me</h2>
-    <img src="https://vignette.wikia.nocookie.net/rickandmorty/images/c/cf/Jerry.png/revision/latest?cb=20160925075715">
+    <h1>Hi... {{ name}} </h1>
+    <h2>It hurst me seeing you this way</h2>
+    <img src="{{ url_for('static', filename='sadboi.png') }}">
 </body>
 </html>

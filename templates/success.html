@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style type="text/css">
+        div {
+            margin-right: 30%;
+            margin-left: 30%;
+            margin-top: 5%
+        }
+    </style>
+
+
+</head>
+<main>
+    <div>
+        <h1>Hello {{ FIRST_NAME }} {{ SURNAME }}</h1>
+        {% for message in get_flashed_messages() %}
+            <div class="error-message red-text">
+                <p> {{ message }} </p>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+</html>

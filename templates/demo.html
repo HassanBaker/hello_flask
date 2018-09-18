@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>We're Hiring</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+
+    <style type="text/css">
+
+        main {
+            font-family: Oswald;
+/*            background-color: #F8F2E1;
+*/        }
+
+        .hg_logo {
+            margin-left: auto;
+            margin-right: auto;
+            width: 5%;
+            display: block;
+        }
+
+        .section-left {
+            margin-left: 5%;
+            margin-top: 5%
+        }
+
+
+        .section-right {
+            margin-left: 55%;
+            margin-top: 5%
+        }
+
+        .section-center {
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .balcony {
+            margin-right: 15%;
+            width: 30%;
+            float: right;
+            border-width: 5px; border-style: solid;
+            margin-top: -3%
+        }
+
+        .dashboard {
+            margin-left: 5%;
+            width: 40%;
+            float: left;
+            margin-top: 2%;
+        }
+
+        .rex {
+            margin-right: 15%;
+            width: 30%;
+            float: right;
+            border-width: 5px; border-style: solid;
+            margin-top: 2%
+        }
+
+
+
+
+    </style>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<main>
+
+    <div style="background-color: #383232"> 
+        <img class='hg_logo' src="{{ url_for('static', filename='hg_orange_on_transparent.png') }}">
+    </div>
+
+
+    <div style="border-width: 5px; border-style: solid; margin-top: 5%; border-style: dotted; margin-bottom: 3%;">
+        <img class="balcony" src="static/balcony.png">
+        <div class='section-left'>
+            <h1>Hello Trinity Netsoc</h1>
+            <h2>We're looking for Junior Software Engineers</h2>
+        </div>
+    </div>
+
+    <span style="margin-left: 42%;">The view from our balcony</span>
+
+
+    <div style="border-width: 5px; border-style: solid; margin-top: 2%; border-style: dotted; margin-bottom: 3%;">
+        <img class="dashboard" src="static/sensors_background_image.png">
+        <div class='section-right'>
+            <h1>What you need to know</h1>
+            <ul style="font-size: 28px">
+                <li>Python!</li>
+                <li>Experience in a web framework... like flask</li>
+                <li>Frontend experience; CSS3 and HTML5</li>
+                <li>An understanding of distributed systems</li>
+            </ul>
+        </div>
+    </div>
+
+     <div style="border-width: 5px; border-style: solid; margin-top: 5%; border-style: dotted; margin-bottom: 3%;">
+        <img class="rex" src="static/rex.jpg">
+        <div class='section-left'>
+            <h1>Why should you work for us?</h1>
+            <h2>To keep it short</h2>
+            <div style="font-size: 28px">
+                <p>
+                    - We like to have fun
+                </p>
+                <p>
+                    - You will gain a lot(!) of experience
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+     <div style="border-width: 5px; border-style: solid; margin-top: 5%; border-style: dotted; margin-bottom: 3%;">
+        <div class='section-center'>
+            <h1>How to apply?</h1>    
+            <h3>Visit <a href="www.hostedgraphite.com/careers">www.hostedgraphite.com/careers</a></h3>
+            <h4>If you have any questions, feel free to conact me</h4>
+        </div>
+    </div>
+
+    
+</main>
+</html>

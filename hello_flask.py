@@ -45,17 +45,65 @@ It then takes a series of optional parameters. All of which correspond to variab
 
 
 # A basic templating demo
-@app.route('/profoundly_pathetic_route', methods=["GET"])
-def profoundly_pathetic_endpoint():
+@app.route('/sadboi', methods=["GET"])
+def sadboi():
     """
         We are expecting a route that resembles this:
-            /profoundly_pathetic_route?name=<some_name>
+            /sadboi?name=<some_name>
         """
 
     name = request.args.get("name")         # Again, we get a name arguement
 
-    return render_template("template.html", ex=name)    # This time we feed the value if that argument into a template
+    return render_template("template.html", name=name)  # This time we feed the value if that argument into a template
                                                         # Jinja then injects it into prewritten html
+
+
+@app.route('/form', methods=['GET', 'POST'])    # Allow both post and get methods
+def form():
+    if request.method == 'GET':
+        return render_template('form.html')
+    elif request.method == 'POST':
+        form_data = request.form                # forms are immutable dictionary objects
+        return render_template('success.html',
+                                FIRST_NAME=form_data['first_name'],
+                                SURNAME=form_data['surname'])
+
+
+
+# from flask import session, flash
+# app.secret_key = 'ssssshhh its a secret'    # A session object allows you to cache user data
+#                                             # This is especially handy for logins
+
+# @app.route('/form', methods=['GET', 'POST'])    
+# def form():
+
+#     if request.method == 'GET':
+#         if 'first_name' not in session:
+#             return render_template('form.html')
+#         else:
+#             flash('This is fetched from the session')   # A flash message is a way of quickly outputting 
+#                                                         # certain messages that you don't expect to ouput frequently
+#             return render_template('success.html',  
+#                                 FIRST_NAME=session['first_name'],
+#                                 SURNAME=session['surname'])
+
+#     elif request.method == 'POST':
+#         form_data = request.form                
+#         session['first_name'] = form_data['first_name']
+#         session['surname'] = form_data['surname']
+#         return render_template('success.html',  
+#                                 FIRST_NAME=form_data['first_name'],
+#                                 SURNAME=form_data['surname'])
+
+import requests
+from config import API_KEY
+@app.route('/demo', methods=['GET'])
+def demo():
+    url = "http://www.hostedgraphite.com/api/v1/sink"
+    response = requests.put(url, auth = (API_KEY, ""), data="hello_hg 1")
+    print (response.status_code)
+    return 'You have posted a metric'
+
 
 if __name__ == "__main__":
     app.run(
